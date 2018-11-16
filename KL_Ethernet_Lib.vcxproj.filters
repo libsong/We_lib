@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{6df4c90e-2726-492c-97a8-da8ba1158042}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{96462e4c-205f-43a8-b96f-e91066f4a646}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{b13cc1ea-219f-463a-a0c7-4da0ba6021a9}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{efa58f10-6ed2-4896-a49d-d3d5afc5168a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{d57fa20d-45a0-4609-a301-4258a138274e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="KL_Ethernet_Lib-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="KL_Ethernet_Lib-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <ClCompile Include="kl_def.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ks_net_init_wrapper.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ks_net_recv_wrapper.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ks_net_send_wrapper.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kl_def.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtwtypes.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="kl_types.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="we_log.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
