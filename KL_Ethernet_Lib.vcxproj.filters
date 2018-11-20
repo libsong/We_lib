@@ -45,6 +45,9 @@
     <ClCompile Include="ks_net_send_wrapper.c">
       <Filter>Source files</Filter>
     </ClCompile>
+    <None Include="README.md">
+      <Filter>Resource files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />

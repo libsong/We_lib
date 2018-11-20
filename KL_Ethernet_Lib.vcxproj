@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8364A07B-B1FB-417E-BBAD-97C65CD7F0F1}</ProjectGuid>
-    <ProjectName>KL_SimulinkLib</ProjectName>
+    <ProjectName>KS_Net</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -86,6 +86,7 @@
     <ClInclude Include="rtwtypes.h" />
     <None Include="Makefile" />
     <None Include="debug.mak" />
+    <None Include="README.md" />
     <None Include="release.mak" />
     <None Include="KL_Ethernet_Lib-Debug.vgdbsettings" />
     <None Include="KL_Ethernet_Lib-Release.vgdbsettings" />
