@@ -5,7 +5,7 @@
 
 #VisualGDB: AutoSourceFiles		#<--- remove this line to disable auto-updating of SOURCEFILES and EXTERNAL_LIBS
 
-TARGETNAME := libKS_Net1.0.0.so
+TARGETNAME := libKS_Net1.0.1.so
 #TARGETTYPE can be APP, STATIC or SHARED
 TARGETTYPE := SHARED
 

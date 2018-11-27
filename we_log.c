@@ -72,7 +72,7 @@ int WeLog_init(void)
 //	strcat(file_path, log_time.c_str());  
 //	strcat(file_path, ".log");  
   
-	we_logfd = open(WELOG_NAME, O_RDWR | O_CREAT | O_APPEND, 0666);  
+	we_logfd = open(WELOG_NAME, O_RDWR | O_CREAT | O_TRUNC, 0777);  
 	assert(we_logfd != -1);  
 	return 0;  
 } 
@@ -171,3 +171,4 @@ void WeLog_Deinit()
 //	read_file_p(argv[1]);  
 //	return 0;  
 //} 
+

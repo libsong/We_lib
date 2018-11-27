@@ -16,7 +16,7 @@
 void IPtoInt(struct	sockaddr_in recv_ad, unsigned char ip[4],unsigned short *port)
 {
 	struct in_addr addr;
-	unsigned int int_ip;
+	unsigned int int_ip = 0;
 	char src_ip[32];
 	
 	*port = ntohs(recv_ad.sin_port);
@@ -25,10 +25,10 @@ void IPtoInt(struct	sockaddr_in recv_ad, unsigned char ip[4],unsigned short *por
 	{
 		int_ip = ntohl(addr.s_addr);
 	}
-	ip[0] = int_ip &0xff;
-	ip[1] = int_ip >> 8 & 0xff;
-	ip[2] = int_ip >> 16 & 0xff;
-	ip[3] = int_ip >> 24 & 0xff;
+	ip[3] = int_ip &0xff;
+	ip[2] = int_ip >> 8 & 0xff;
+	ip[1] = int_ip >> 16 & 0xff;
+	ip[0] = int_ip >> 24 & 0xff;
 	
 	return;
 }
@@ -201,9 +201,6 @@ int SendPacket(char* DataSend, int datalength)
 	struct timeval tv, time_elapse, time_elapse1;
 	int sd = g_sSockinf[id].ks_simulink_sd;
 	char proto = g_sSockinf[id].kind;
-	
-//	sprintf(g_szMsg, "RecvPacket in, sd = %d , proto = %d ", sd, proto);
-//	kl_simulink_log(g_szMsg);
   
 	if (sd < 0) return (-1);
 	if (timeout > 0)
@@ -221,8 +218,8 @@ int SendPacket(char* DataSend, int datalength)
 		// necessary when reseting the model so we don't wait indefinitely
 		// and prevent the process from exiting and freeing the port for
 		// a future instance (model load).
-		memset(&time_elapse, 0, sizeof(struct timeval));
-		gettimeofday(&time_elapse, NULL);
+//		memset(&time_elapse, 0, sizeof(struct timeval));
+//		gettimeofday(&time_elapse, NULL);
 		switch(select(sd + 1, &sd_set, (fd_set*)0, (fd_set*)0, &tv))
 		{
 		case -1:
@@ -230,9 +227,8 @@ int SendPacket(char* DataSend, int datalength)
 			return (-1);
 		case  0:
 			// We hit the timeout
-			gettimeofday(&time_elapse1, NULL);
-//			sprintf(g_szMsg, "	sd = %d , time elapse = %ld ", sd, time_elapse1.tv_usec + - time_elapse.tv_usec);
-//			kl_simulink_log(g_szMsg);
+//			gettimeofday(&time_elapse1, NULL);
+			
 			return (0);
 		default:
 			if (!(FD_ISSET(sd, &sd_set)))
@@ -254,12 +250,7 @@ int SendPacket(char* DataSend, int datalength)
 	
 	if (len < 0)
 	{
-		sprintf(g_szMsg, "	errno = %d , errstring = %s ", errno,strerror(errno));
-		kl_simulink_log(g_szMsg);
 	}
-	
-//	sprintf(g_szMsg, "RecvPacket out len = %d , DataRecv[0] = %d ", len, DataRecv[0]);
-//	kl_simulink_log(g_szMsg);
     
 	return (len);
 }//////ring buf//////当in==out时，表明缓冲区为空的，当(in-out)==size 时，说明缓冲区已满

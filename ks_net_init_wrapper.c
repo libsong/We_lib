@@ -78,7 +78,7 @@ void ks_net_init_Start_wrapper(const real_T *u0,
 	int				connet_cnt = 0;
 	int				flag,i,len;
 	char			RemoteAddr[16], LocalAddr[16], buf[5];
-	
+		
 	WeLog_2txt("kl ethernet init socket start , id = %d , sd = %d , protocol = %d local port = %d", id, g_sSockinf[id].ks_simulink_sd, proto, port);
 
 	g_err[id] = EOK;	
@@ -230,7 +230,6 @@ void ks_net_init_Start_wrapper(const real_T *u0,
 	}
 
 	WeLog_2txt("kl ethernet init socket end , id = %d , sd = %d\n", id, g_sSockinf[id].ks_simulink_sd);
-	
 }
 
 void ks_net_init_Outputs_wrapper(const real_T *u0,

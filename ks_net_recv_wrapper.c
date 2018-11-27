@@ -63,7 +63,6 @@ static void* recvThread(void* arg)
 	
 	WeLog_2txt( "ks_net_recv_Start_wrapper pthread in ,id = %d\n",id);
 	
-	
 	while (1)
 	{
 		if (g_Tend[id] == 1)
@@ -76,6 +75,9 @@ static void* recvThread(void* arg)
 			if (count > 0)
 			{
 				my_fifo_put(g_ptrKsRecvFifo[id],(unsigned char *)recv_buf,count);
+			}
+			else
+			{
 			}
 		}
 		usleep(loop_p);
@@ -280,7 +282,7 @@ void ks_net_recv_Outputs_wrapper(const real_T *u0,
 			{
 				for (i = 0; i < 4; i++)
 				{
-					if ((int)src_addr[i] != ip[i])
+					if ((unsigned char)src_addr[i] != ip[i])
 					{
 						ipEqual = 0;
 					}
